@@ -1,17 +1,3 @@
-#streamlit frontend e backend para criação de sites
-
-# exemplo de lista:
-# nomes["amor", "ian", "piolho", "khan"]
-# como selecionar um item da lista: primeiro_item = nomes[0]
-
-# dicionário (para armazenar a lista de mensagens do chat)
-# role = quem enviou a mensagem (função)
-# content = texto da mensagem (conteúdo)
-
-#exemplo de dicionário:
-# mensagem = {"quem": "user", "content": "olá"}
-# como selecionar um item do dicionário: texto_mensagem = mensagem["content"]
-
 import streamlit as st
 import google.generativeai as genai
 from dotenv import load_dotenv
@@ -59,4 +45,5 @@ if mensagem_usuario:
     # exibir a resposta da IA na tela
     st.chat_message("assistant").write(resposta_ia)
     mensagem_ia = {"role": "assistant", "content": resposta_ia}
+
     st.session_state["lista_mensagens"].append(mensagem_ia)
